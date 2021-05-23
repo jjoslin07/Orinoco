@@ -12,7 +12,7 @@
 <body>
     <header class="bg-light">
         <!-- Just an image -->
-        <nav class="navbar navbar-light bg-ligh justify-content-center">
+        <nav class="navbar navbar-light bg-light justify-content-center">
         <a class="navbar-brand" href="#">
           <img src="/images/orinoco-logo.png" width="200" height="auto" alt="">
         </a>
@@ -22,14 +22,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Cart</a>
+                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/cart.html">Cart</a>
               </div>
             </div>
           </nav>
     </header>
-    <main class="bg-light">
-            <div id="carouselExampleIndicators" class="carousel slide col-9 m-auto" data-ride="carousel">
+    <!--Main-->
+    <main class="container-fluid bg-light">
+        <!--Homepage Carousel-->
+            <div id="carouselExampleIndicators" class="carousel slide col-10 m-auto" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -63,8 +65,71 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div>
+              <div class="mx-auto my-4 col-2">
+                  <!--Start Shopping Button-->
+                <button class="btn btn-primary">Start Shopping</button>
+              </div>
+              <div class="container">
+                  <div class="row my-4">
+                      <div class="col-sm-4">
+                        <div class="card shadow-lg" style="width: 18rem;">
+                            <img class="card-img-top" height="200" src="/images/teddy_1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card shadow-lg" style="width: 18rem;">
+                            <img class="card-img-top" height="200" src="/images/teddy_2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card shadow-lg" style="width: 18rem;">
+                            <img class="card-img-top" height="200" src="/images/teddy_3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row my-4">
+                      <div class="col-sm-4">
+                        <div class="card shadow-lg" style="width: 18rem;">
+                            <img class="card-img-top" height="200" src="/images/teddy_4.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card shadow-lg" style="width: 18rem;">
+                            <img class="card-img-top" height="200" src="/images/teddy_5.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            
+
     </main>
-    <footer">
+    <footer>
+     <!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="https://github.com/jjoslin07/Project-5"> Joseph Joslin</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
 
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
