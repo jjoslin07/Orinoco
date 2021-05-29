@@ -10,34 +10,181 @@
     <title>Cart</title>
 </head>
 <body>
-    <header class="bg-light">
-        <!-- Just an image -->
-        <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">
-          <img src="/images/orinoco-logo.png" width="200" height="auto" alt="">
-        </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/cart.html">Cart</a>
-              </div>
-            </div>
-          </nav>
+  <!-- Header -->
+    <header>
+      <!-- Navbar-->
+      <nav class="navbar navbar-expand-lg py-3 navbar-light bg-light shadow-sm">
+        <div class="container">
+      <a href="./index.html" class="navbar-brand">
+        <!-- Logo Image -->
+        <img src="./images/orinoco-logo.png" height="100" width="auto" alt="Orinoco Logo">
+      </a>
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="./index.html" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="./cart.html" class="nav-link"><i class="bi bi-bag"></i></a></li>
+        </ul>
+      </div>
+        </div>
+      </nav>
     </header>
     <main>
-
+      <div class="container-fluid">
+        <main>
+          <div class="container">
+              <div class="row g-5 my-3">
+                <!--CART SECTION-->
+                <div class="col-md-5 col-lg-4 order-md-last">
+                  <h2 class="d-flex justify-content-between align-items-center mb-3">Your cart
+                  </h2>
+                  <ul id="cart" class="list-group mb-3">
+                  </ul>
+                  <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between total">
+                      <span>Total (USD)</span>
+                      <strong id="total-cost">$0</strong>
+                    </li>
+                  </ul>
+                </div>
+                <!--BILLING SECTION-->
+                <div class="col-md-7 col-lg-8">
+                  <h2 class="mb-3">Order Information</h2>
+                  <form class="needs-validation" novalidate>
+                    <div class="row g-3">
+                      <div class="col-sm-6">
+                        <label for="firstName" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" pattern="[A-Za-z]{1,32}" required>
+                        <div class="invalid-feedback">
+                          Valid first name is required.
+                        </div>
+                      </div>
+          
+                      <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" value="" pattern="[A-Za-z]{1,32}" required>
+                        <div class="invalid-feedback">
+                          Valid last name is required.
+                        </div>
+                      </div>
+          
+                      <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                        <div class="invalid-feedback">
+                          Please enter a valid email address for shipping updates.
+                        </div>
+                      </div>
+          
+                      <div class="col-12">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" pattern="^[#.0-9a-zA-Z\s,-]+$" required>
+                        <div class="invalid-feedback">
+                          Please enter your shipping address.
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-lg-5 mt-2">
+                        <div>
+                        <label for="country" class="form-label">Country</label>
+                      </div>
+                      <div>
+                        <select class="form-control form-select form-select-lg p-2 w-100" id="country" style="border-radius: 4px;border-color:silver;" aria-label=".form-select-lg example" required>
+                          <option value="">Choose...</option>
+                          <option value="USA">United States</option>
+                        </select>
+                      </div>
+                        <div class="invalid-feedback">
+                          Please select a valid country.
+                        </div>
+                      </div>
+          
+                      <div class="col-md-6 col-lg-4 mt-2">
+                        <div>
+                        <label for="city" class="form-label">City</label>
+                        </div>
+                        <div>
+                        <select class="form-control form-select form-select-lg p-2 w-100" id="city" style="border-radius: 4px;border-color:silver;" aria-label="city" required>
+                          <option value="">Choose...</option>
+                          <option value="LOS">Los Angeles</option>
+                          <option value="NYC">New York City</option>
+                          <option value="CHI">Chicago</option>
+                          <option value="LV">Las Vegas</option>
+                          <option value="MIA">Miami</option>
+                          <option value="HOU">Houston</option>
+                        </select>
+                        </div>
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+          
+                      <div class="col-md-6 col-lg-3 mt-2">
+                        <label for="zip" class="form-label">Zip<input type="text" class="form-control mt-2" id="zip" minlength="5" maxlength="5" placeholder=""  value="" required></label>
+                        
+                        <div class="invalid-feedback">
+                          Zip code required; 5 digits.
+                        </div>
+                      </div>
+                    </div>
+                <hr class="my-4">
+                <button class="w-100 btn btn-primary btn-lg btn-submit" type="submit" value="Submit" aria-label="Continue to checkout">Submit Order</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+  </div>
     </main>
-        <!-- Footer -->
-   <footer class="page-footer font-small blue">
-       <!-- Copyright -->
-       <div class="footer-copyright text-center py-3">© 2021 Copyright:
-         <a href="https://github.com/jjoslin07/Project-5"> Joseph Joslin</a>
-       </div>
-     </footer>
+<!-- Footer -->
+<footer class="bg-white shadow">
+  <div class="container py-5">
+    <div class="row py-4">
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+        <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+        <ul class="list-inline mt-4">
+          <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="#" target="_blank" title="snapchat"><i class="fa fa-snapchat"></i></a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+        <h6 class="text-uppercase font-weight-bold mb-4">Shop</h6>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="#" class="text-muted">Lorem ipsum</a></li>
+          <li class="mb-2"><a href="#" class="text-muted">Dolar Sit</a></li>
+          <li class="mb-2"><a href="#" class="text-muted">Amet Consectetur</a></li>
+          <li class="mb-2"><a href="#" class="text-muted">Adipisicing Elit</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+        <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="#" class="text-muted">Tempora Voluptates</a></li>
+          <li class="mb-2"><a href="#" class="text-muted">Sed do</a></li>
+          <li class="mb-2"><a href="#" class="text-muted">Tempor Incididunt</a></li>
+          <li class="mb-2"><a href="#" class="text-muted">Eiusmod</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-lg-0">
+        <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+        <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
+        <div class="p-1 rounded border">
+          <div class="input-group">
+            <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+            <div class="input-group-append">
+              <button id="button-addon1" type="submit" class="btn btn-link"><i class="far fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End -->
+      <script src="./js/cart.js"></script>
+      <script src="https://kit.fontawesome.com/793864380d.js" crossorigin="anonymous"></script>
        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
