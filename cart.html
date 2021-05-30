@@ -37,9 +37,6 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card shadow-sm">
-                                <div class="card-header">
-                                    <h5>Cart</h5>
-                                </div>
                                 <div class="card-body cart">
                                     <div class="col-sm-12 empty-cart-cls text-center"> <img src="./images/cart-icon.png"width="100" height="100" class="img-fluid mb-4 mr-3">
                                         <h3><strong>Your Cart is Empty</strong></h3>
@@ -53,9 +50,9 @@
               <div class="row g-5 my-3">
                 <!--CART SECTION-->
                 <div class="col-md-5 col-lg-4 order-md-last">
-                  <h2 class="d-flex justify-content-between align-items-center mb-3">Your cart
+                  <h2 class="d-flex justify-content-between align-items-center mb-3">Summary
                   </h2>
-                  <ul id="cart" class="list-group mb-3">
+                  <ul id="summary" class="list-group mb-3">
                   </ul>
                   <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between total">
@@ -66,12 +63,12 @@
                 </div>
                 <!--BILLING SECTION-->
                 <div class="col-md-7 col-lg-8">
-                  <h2 class="mb-3">Order Information</h2>
+                  <h2 class="mb-3">Shipping Information</h2>
                   <form class="needs-validation" novalidate>
                     <div class="row g-3">
                       <div class="col-sm-6">
                         <label for="firstName" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" pattern="[A-Za-z]{1,32}" required>
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name" pattern="[A-Za-z]{1,32}" required>
                         <div class="invalid-feedback">
                           Valid first name is required.
                         </div>
@@ -79,7 +76,7 @@
           
                       <div class="col-sm-6">
                         <label for="lastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" pattern="[A-Za-z]{1,32}" required>
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" pattern="[A-Za-z]{1,32}" required>
                         <div class="invalid-feedback">
                           Valid last name is required.
                         </div>
@@ -120,15 +117,8 @@
                         <label for="city" class="form-label">City</label>
                         </div>
                         <div>
-                        <select class="form-control form-select form-select-lg p-2 w-100" id="city" style="border-radius: 4px;border-color:silver;" aria-label="city" required>
-                          <option value="">Choose...</option>
-                          <option value="LOS">Los Angeles</option>
-                          <option value="NYC">New York City</option>
-                          <option value="CHI">Chicago</option>
-                          <option value="LV">Las Vegas</option>
-                          <option value="MIA">Miami</option>
-                          <option value="HOU">Houston</option>
-                        </select>
+                        <input class="form-control form-select form-select-lg p-2 w-100" placeholder="City" id="city" style="border-radius: 4px;border-color:silver;" aria-label="city" required>
+                        </input>
                         </div>
                         <div class="invalid-feedback">
                           Please provide a valid city.
@@ -136,7 +126,7 @@
                       </div>
           
                       <div class="col-md-6 col-lg-3 mt-2">
-                        <label for="zip" class="form-label">Zip<input type="text" class="form-control mt-2" id="zip" minlength="5" maxlength="5" placeholder=""  value="" required></label>
+                        <label for="zip" class="form-label">Zip<input type="text" class="form-control mt-2" id="zip" minlength="5" maxlength="5" placeholder="12345"  value="" required></label>
                         
                         <div class="invalid-feedback">
                           Zip code required; 5 digits.
