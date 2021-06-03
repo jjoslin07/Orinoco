@@ -43,3 +43,17 @@ createCard = (response) => {
     }
 }
 
+init = async () => {
+    // Call makeRequest for Api request and "await" response
+    try {
+        const requestPromise = makeRequest();
+        const response = await requestPromise;
+    // Pass responese to createCard function to display results
+        createCard(response);
+    }   catch (error) {
+    // Display error message if request fails
+        document.getElementById('productSection').innerHTML = '<h2 class = "mx-auto">' + error + '</h2>';        
+    }
+}
+
+init ();
