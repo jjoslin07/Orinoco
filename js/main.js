@@ -29,13 +29,13 @@ createCard = (response) => {
         const article = document.createElement('article');
         const productCard = document.createElement('div');
         const cardBody = document.createElement('div');
-        // Add Bootstrap classes to card elements
-        article.classList.add('container-fluid', 'col-lg-3', 'my-2');
+        // Add classes to card elements
+        article.classList.add('container-fluid','col-sm-3', 'my-2');
         productCard.classList.add('card', 'mx-auto', 'mt-5');
         cardBody.classList.add('card-body', 'text-center', 'mx-auto');
         // Build out the product card using the Teddies API
-        productCard.innerHTML += '<img src="' + response[i].imageUrl + '"alt="" class="mx-auto img-thumbnail" width="auto" height="auto"/>';
-        cardBody.innerHTML += '<h5 class="card-name font-weight-bold">' + response[i].name + '</h5> <p class="card-description text-justify p-1">' + response[i].description + '</p> <p class="card-price">' + '$' + response[i].price / 100 + '</p> </div>' + '<a href="product.html?!id=' + response[i]._id + '"class="btn details px-auto"> view details </a>';
+        productCard.innerHTML += '<img src="' + response[i].imageUrl + '"alt="" class="rounded-top mx-auto img-top img-fluid" style="min-height:200px;width:auto;overflow:hidden;" />';
+        cardBody.innerHTML += '<h5 class="card-name">' + response[i].name + '</h5> <p class="card-description text-justify">' + response[i].description + '</p> <p class="card-price">' + '$' + response[i].price / 100 + '</p>' + '<a href="product.html?!id=' + response[i]._id + ' "class="btn details">view details</a>';
         // Append completed elemnts to the card
         article.appendChild(productCard);
         productCard.appendChild(cardBody);
@@ -52,7 +52,7 @@ init = async () => {
         createCard(response);
     }   catch (error) {
     // Display error message if request fails
-        document.getElementById('productSection').innerHTML = '<h2 class = "mx-auto">' + error + '</h2>';        
+        document.getElementById('productSection').innerHTML = '<h2 class = "mx-auto text-center">' + error + '</h2>';        
     }
 }
 
