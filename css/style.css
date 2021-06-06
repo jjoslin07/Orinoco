@@ -2,9 +2,6 @@
   color: black;
 }
 
-#footer {
-  margin-top: auto;
-}
 
 i {
   color: black;
@@ -70,4 +67,8 @@ body {
   min-height: 200px;
   padding-bottom: 10px;
   width: fit-content;
+}
+
+#footer {
+  margin-top: auto;
 }
