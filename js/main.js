@@ -6,8 +6,8 @@ makeRequest = () => {
         apiRequest.open('GET', 'http://localhost:3000/api/teddies/');
         apiRequest.send();
         apiRequest.onreadystatechange = () => {
-            if (apiRequest.readyState == 4) {
-                if (apiRequest.status == 200) {
+            if (apiRequest.readyState === 4) {
+                if (apiRequest.status === 200) {
                     // If apiRequest.readyState and apiRequest.status return 
                     // success codes resolve Promise with response.
                     resolve(JSON.parse(apiRequest.response));
@@ -30,13 +30,13 @@ createCard = (response) => {
         const cardImg = document.createElement('div');
         const cardBody = document.createElement('div');
         // Add classes to card elements
-        card.classList.add('container-fluid');
-        cardImg.classList.add('card', 'mx-auto', 'col-2');
+        card.classList.add('container-fluid','col-sm-2', 'my-5');
+        cardImg.classList.add('card', 'mx-auto');
         cardBody.classList.add('card-body', 'text-center', 'mx-auto');
         // Add Style to article element
         // Build out the product card using the Teddies API
         cardImg.innerHTML += '<img class="mx-auto img-thumbnail" src="' + response[i].imageUrl + '" width="auto" height="auto" />';
-        cardBody.innerHTML += '<div class="cvp"> <h5 class="card-title font-weight-bold">' + response[i].name + '</h5> <p class="card-description text-justify">' + response[i].description + '</p> <p class="card-price d-flex justify-content-center">' + '$' + response[i].price / 100 + '</p>' + '<a href="product.html?!id=' + response[i]._id + ' "class="btn details">view details</a> </div>';
+        cardBody.innerHTML += '<div class="cvp"> <h5 class="card-title font-weight-bold">' + response[i].name + '</h5> <p class="card-description text-justify">' + response[i].description + '</p> <p class="card-price d-flex justify-content-center">' + '$' + response[i].price / 100 + '</p>' + '<a href="product.html?id=' + response[i]._id + ' "class="btn details rounded bg-light">view details</a> </div>';
         // Append compeleted Card Elements
         card.appendChild(cardImg);
         cardImg.appendChild(cardBody);
@@ -56,5 +56,3 @@ init = async () => {
         document.getElementById('productSection').innerHTML = '<h2 class = "mx-auto text-center">' + error + '</h2>';
     }
 }
-
-init();
