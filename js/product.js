@@ -30,10 +30,9 @@ createPage = (response) => {
     const imgCard = document.createElement('div');
     const image = response.imageUrl;
     // Add bootstrap classes for product image
-    productImage.classList.add('col-xl-6','rounded', 'img-fluid');
-    imgCard.classList.add('rounded')
+    productImage.classList.add('container-fluid', 'p-0', 'col-xl-6','shadow');
     // Add product image url
-    imgCard.innerHTML += '<img src="' + image + '" alt="" class="img-fluid">';
+    productImage.innerHTML += '<img src="' + image + '" alt="Teddy Bear" class="img-fluid rounded" style="height:100%; width:100%; object-fit:cover;">';
     // Append completed element to the page
     productImage.appendChild(imgCard);
     // Create constants for product name, description, and price
@@ -43,11 +42,12 @@ createPage = (response) => {
     const description = response.description;
     const price = response.price;
     // Add bootstrap classes for product name, description and price
-    productDescription.classList.add('mt-4', 'mt-md-0');
+    productDescription.classList.add('mx-auto');
+    productCard.classList.add('col-xl-6','p-0');
     // Add html for product name, description and price
-    productDescription.innerHTML += '<h2 class="display-5 m-0 shop-item-title">' + title + '</h2>';
-    productDescription.innerHTML += '<p>' + description + '</p>';
-    productDescription.innerHTML += '<h3 class="lead shop-item-price">' + '$' + price / 100 + '</p>';
+    productDescription.innerHTML += '<h1 class="mx-auto shop-item-title w-auto">' + title + '</h1>';
+    productDescription.innerHTML += '<p class="lead mx-auto w-auto">' + description + '</p>';
+    productDescription.innerHTML += '<p class="lead mx-auto font-weight-bolder">' + '$' + price / 100 + '</p>';
     // Create constants for dropdown menu
     const dropdownMenu = document.createElement('form');
     const dropdownLabel = document.createElement('label');
@@ -55,6 +55,7 @@ createPage = (response) => {
     // Add Bootstrap classes for dropdown menu
     dropdownMenu.classList.add('my-4');
     dropdownOptions.classList.add('btn', 'btn-secondary', 'dropdown-toggle', 'w-auto');
+    dropdownLabel.classList.add('font-weight-bold');
     dropdownLabel.innerHTML = 'Choose your color&#58; &nbsp;';
     // Create For loop for dropdown menu "Choose your color"
     for (let i in response.colors) {
@@ -71,7 +72,7 @@ createPage = (response) => {
     const addedToCartAlert = document.createElement('div');
     // Add bootstrap classes for add to card button
     addToCart.setAttribute('type', 'submit');
-    addToCart.classList.add('btn', 'btn-primary', 'add-to-cart', 'rounded');
+    addToCart.classList.add('btn', 'btn-primary', 'add-to-cart', 'rounded','w-auto','align-self-center','my-5');
     addToCart.textContent = 'ADD TO CART';
     // Function that adds item to local storage
     addToCart.addEventListener('click', () => {
