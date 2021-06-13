@@ -27,19 +27,19 @@ createCard = (response) => {
     for (let i in response) {
         // Create product card elements
         const card = document.createElement('article');
-        const cardImg = document.createElement('div');
+        const cardImage = document.createElement('div');
         const cardBody = document.createElement('div');
         // Add classes to card elements
-        card.classList.add('container-fluid','col-sm-2', 'my-5');
-        cardImg.classList.add('card', 'mx-auto');
+        card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6','p-3');
+        cardImage.classList.add('card', 'mx-auto');
         cardBody.classList.add('card-body', 'text-center', 'mx-auto');
         // Add Style to article element
         // Build out the product card using the Teddies API
-        cardImg.innerHTML += '<img class="mx-auto img-thumbnail" src="' + response[i].imageUrl + '" width="auto" height="auto" />';
+        cardImage.innerHTML += '<img class="mx-auto img-fluid rounded-top embed-responsive embed-responsive-4by3" id="cardImages" src="' + response[i].imageUrl +  '" />';
         cardBody.innerHTML += '<div class="cvp"> <h5 class="card-title font-weight-bold">' + response[i].name + '</h5> <p class="card-description text-justify">' + response[i].description + '</p> <p class="card-price d-flex justify-content-center">' + '$' + response[i].price / 100 + '</p>' + '<a href="product.html?id=' + response[i]._id + ' "class="btn details rounded bg-light">view details</a> </div>';
         // Append compeleted Card Elements
-        card.appendChild(cardImg);
-        cardImg.appendChild(cardBody);
+        card.appendChild(cardImage);
+        cardImage.appendChild(cardBody);
         section.appendChild(card);
     }
 }
@@ -56,3 +56,5 @@ init = async () => {
         document.getElementById('productSection').innerHTML = '<h2 class = "mx-auto text-center">' + error + '</h2>';
     }
 }
+
+init();
