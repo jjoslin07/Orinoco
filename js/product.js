@@ -32,7 +32,7 @@ createPage = (response) => {
     // Add bootstrap classes for product image
     productImage.classList.add('container-fluid', 'p-0', 'col-xl-6','shadow');
     // Add product image url
-    productImage.innerHTML += '<img src="' + image + '" alt="Teddy Bear" class="img-fluid rounded" style="height:100%; width:100%; object-fit:cover;">';
+    productImage.innerHTML += '<img src="' + image + '" alt="Teddy Bear" class="img-fluid" style="height:100%; width:100%; object-fit:cover;">';
     // Append completed element to the page
     productImage.appendChild(imgCard);
     // Create constants for product name, description, and price
@@ -72,8 +72,8 @@ createPage = (response) => {
     const addedToCartAlert = document.createElement('div');
     // Add bootstrap classes for add to card button
     addToCart.setAttribute('type', 'submit');
-    addToCart.classList.add('btn', 'btn-primary', 'add-to-cart', 'rounded','w-auto','align-self-center','my-5');
-    addToCart.textContent = 'ADD TO CART';
+    addToCart.classList.add('btn', 'btn-primary', 'add-to-cart', 'rounded','w-75','align-self-center','my-5');
+    addToCart.textContent = 'Add to Cart';
     // Function that adds item to local storage
     addToCart.addEventListener('click', () => {
         let cartItems = [];
@@ -98,9 +98,9 @@ createPage = (response) => {
     });
     // Add alert for items that are added to the cart
     addToCart.onclick = function () {
-        addedToCartAlert.classList.add('alert', 'alert-success', 'mt-4');
+        addedToCartAlert.classList.add('alert', 'alert-success');
         addedToCartAlert.setAttribute('role', 'alert');
-        addedToCartAlert.textContent = response.name + ' ' + 'with' + ' ' + dropdownOptions.value + ' ' + 'Color' + ' ' + 'added to cart';
+        addedToCartAlert.textContent = response.name + ' ' + 'with' + ' ' + dropdownOptions.value + ' ' + 'Color' + ' ' + 'added to cart!';
     }
     // Append completed elements to the product page
     productCard.appendChild(productDescription);
@@ -108,6 +108,17 @@ createPage = (response) => {
     productCard.appendChild(addToCart);
     productCard.appendChild(addedToCartAlert);
 };
+// Function to update items number in shopping cart.
+
+function addNumCart() {
+    const localStorageContent = localStorage.getItem('cart');
+    if (localStorageContent) {
+        let cartItemsArray = JSON.parse(localStorageContent);
+        let cartItemsTotal = document.querySelector('.cartItemsTotal');
+        cartItemsTotal.innerHTML = cartItemsArray.length;
+    }
+}
+addNumCart();
 
 init = async () => {
     try {
@@ -118,7 +129,7 @@ init = async () => {
         createPage(response);
     } catch (error) {
         //error message displayed if request fails
-        document.querySelector('main').innerHTML = '<h2 class = "mx-auto">' + error + '</h2>';
+        document.querySelector('main').innerHTML = '<h2 class = "mx-auto text-center">' + error + '</h2>';
     }
 }
 

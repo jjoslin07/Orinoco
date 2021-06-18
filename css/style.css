@@ -74,6 +74,7 @@ body {
 
 }
 
+#confirmationPageJumbotron,
 #productCard,
 #homePageJumboTron {
   background: linear-gradient(90deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
@@ -81,4 +82,8 @@ body {
 
 .navbar {
   background: linear-gradient(270deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
+}
+
+.bi-dash-square {
+  color: red;
 }
