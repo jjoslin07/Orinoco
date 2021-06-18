@@ -1,11 +1,11 @@
-//'use strict';
+'use strict';
 
 let orderId;
 
 let localStorageContent = localStorage.getItem('cart');
 let cartItemsArray = JSON.parse(localStorageContent);
 
-//update cart number in nav
+// Update cart number in navigation menu
 function addNumCart() {
     if (localStorageContent) {
         let cartItemsTotal = document.querySelector('.cartItemsTotal');
@@ -36,12 +36,11 @@ addNumCart();
 
                     let products = [];
 
-                    //get id prod and push it in array
+                    // Get product id and push it in array
                     let cartArray = JSON.parse(localStorage.getItem('cart'));
                     for (let i = 0; i < cartArray.length; i++) {
                         products.push(cartArray[i].id);
                     }
-                    //console.log(products);
                     let firstName = document.getElementById('firstName');
                     let lastName = document.getElementById('lastName');
                     let email = document.getElementById('email');
@@ -63,7 +62,6 @@ addNumCart();
                         contact: contact,
                         products: products,
                     }
-                    //console.log(data);
                     makeRequest(data);
 
                     sessionStorage.setItem('firstName', contact.firstName);
@@ -101,12 +99,10 @@ function displayCart() {
             removeButton.classList.add('btn','my-2', 'py-1', 'px-2', 'remove');
             removeButton.setAttribute('aria-label', 'remove');
             removeButton.innerHTML = '<i class="bi bi-dash-square"></i>';
-            //removeButton.setAttribute('onclick', 'removeItem(i);'); 
             removeButton.onclick = function removeItem() {
                 let cartItemsArray = JSON.parse(localStorage.getItem('cart'));
                 cartItemsArray.splice(i, 1);
                 localStorage.setItem('cart', JSON.stringify(cartItemsArray));
-                //rerender page
                 location.reload();
             }
 
@@ -119,6 +115,7 @@ function displayCart() {
 }
 
 displayCart();
+
 //calculate total cost
 function updateCartTotal() {
     let total = document.getElementById('totalCost');
@@ -133,6 +130,7 @@ function updateCartTotal() {
 }
 
 updateCartTotal();
+
 // Send inforamtion from user to api go to confirmation page
 function makeRequest(data) {
     fetch('http://localhost:3000/api/teddies/order', {
@@ -144,7 +142,6 @@ function makeRequest(data) {
     }).then((response) => {
         return response.json();
     }).then((data) => {
-        //console.log(data);
         orderId = data.orderId;
         sessionStorage.setItem("orderId", orderId);
         console.log(orderId);

@@ -30,7 +30,7 @@ createCard = (response) => {
         const cardImage = document.createElement('div');
         const cardBody = document.createElement('div');
         // Add classes to card elements
-        card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6','my-2',);
+        card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6','my-2');
         cardImage.classList.add('card', 'mx-auto', 'p-auto');
         cardBody.classList.add('card-body', 'text-center', 'mx-auto');
         // Add Style to article element
