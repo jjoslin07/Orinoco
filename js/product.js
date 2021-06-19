@@ -122,13 +122,13 @@ addNumCart();
 
 init = async () => {
     try {
-        //call makeRequest for api request and "await" response
+        // Call makeRequest for api request and "await" response
         const requestPromise = makeRequest();
         const response = await requestPromise;
-        //pass response to createPage fuction to display results
+        // Pass response to createPage fuction to display results
         createPage(response);
     } catch (error) {
-        //error message displayed if request fails
+        // Error message displayed if request fails
         document.querySelector('main').innerHTML = '<h2 class = "mx-auto text-center">' + error + '</h2>';
     }
 }
