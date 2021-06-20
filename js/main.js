@@ -30,13 +30,13 @@ createCard = (response) => {
         const cardImage = document.createElement('div');
         const cardBody = document.createElement('div');
         // Add classes to card elements
-        card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6','my-2');
+        card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6','my-2', 'd-flex');
         cardImage.classList.add('card', 'mx-auto', 'p-auto');
         cardBody.classList.add('card-body', 'text-center', 'mx-auto');
         // Add Style to article element
         // Build out the product card using the Teddies API
         cardImage.innerHTML += '<img class="mx-auto img-top img-fluid rounded-top" style="object-fit:cover; height:100%; width:100%" id="cardImages" src="' + response[i].imageUrl + '"/>';
-        cardBody.innerHTML += '<div class="cvp"> <h5 class="card-title font-weight-bold">' + response[i].name + '</h5> <p class="card-description text-justify">' + response[i].description + '</p> <p class="card-price d-flex justify-content-center">' + '$' + response[i].price / 100 + '</p>' + '<a href="product.html?id=' + response[i]._id + ' "class="btn details rounded"> View' + ' ' + response[i].name + '  </a> </div>';
+        cardBody.innerHTML += '<div class="cvp"> <h5 class="card-title font-weight-bold">' + response[i].name + '</h5> <p class="card-description text-justify">' + response[i].description + '</p> <p class="card-price d-flex justify-content-center">' + '$' + response[i].price / 100 + '</p>' + '<a href="product.html?id=' + response[i]._id + ' "class="btn details rounded stretched-link"> View' + ' ' + response[i].name + '  </a> </div>';
         // Append compeleted Card Elements
         card.appendChild(cardImage);
         cardImage.appendChild(cardBody);
