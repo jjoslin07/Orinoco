@@ -1,24 +1,26 @@
 // This function is used to make an Api request from the backend-server
 
 makeRequest = () => {
-    return new Promise((resolve, reject) => {
-        let apiRequest = new XMLHttpRequest();
-        apiRequest.open('GET', 'http://localhost:3000/api/teddies/');
-        apiRequest.send();
-        apiRequest.onreadystatechange = () => {
-            if (apiRequest.readyState === 4) {
-                if (apiRequest.status === 200) {
-                    // If apiRequest.readyState and apiRequest.status return 
-                    // success codes resolve Promise with response.
-                    resolve(JSON.parse(apiRequest.response));
-                } else {
-                    reject('We\'re sorry the server is unavailable');
-                    // Else reject and display error message
-                }
-            }
-        }
-    })
+    return fetch("http://localhost:3000/api/teddies")
+        .then(function (httpBodyResponse) {
+            return httpBodyResponse.json()
+        })
+        .then(response => {
+            createCard(response)
+        })
+        .catch(function (error) {
+            alert(
+                "We\'re sorry the server is unavailable"
+            )
+        })
 }
+
+callForApi = async () => {
+    const requestPromise = makeRequest();
+    const response = requestPromise;
+}
+
+callForApi();
 
 // This function will be used to create the product cards dynamically on the home page
 
@@ -36,7 +38,9 @@ createCard = (response) => {
         // Add Style to article element
         // Build out the product card using the Teddies API
         cardImage.innerHTML += '<img class="mx-auto img-top img-fluid rounded-top" style="object-fit:cover; height:100%; width:100%" id="cardImages" src="' + response[i].imageUrl + '"/>';
-        cardBody.innerHTML += '<div class="cvp"> <h5 class="card-title font-weight-bold">' + response[i].name + '</h5> <p class="card-description text-justify">' + response[i].description + '</p> <p class="card-price d-flex justify-content-center">' + '$' + response[i].price / 100 + '</p>' + '<a href="product.html?id=' + response[i]._id + ' "class="btn details rounded stretched-link"> View' + ' ' + response[i].name + '  </a> </div>';
+        cardBody.innerHTML += '<div class="cvp"> <h5 class="card-title font-weight-bold">' + response[i].name + '</h5> <p class="card-description text-justify">' + response[i].description +
+        '</p> <p class="card-price d-flex justify-content-center">' + '$' + response[i].price / 100 + '</p>' + '<a href="product.html?id=' + response[i]._id +
+        ' "class="btn details rounded stretched-link"> View' + ' ' + response[i].name + '  </a> </div>';
         // Append compeleted Card Elements
         card.appendChild(cardImage);
         cardImage.appendChild(cardBody);
@@ -44,20 +48,6 @@ createCard = (response) => {
     }
 }
 
-init = async () => {
-    // Call makeRequest for Api request and "await" response
-    try {
-        const requestPromise = makeRequest();
-        const response = await requestPromise;
-        // Pass responese to createCard function to display results
-        createCard(response);
-    } catch (error) {
-        // Display error message if request fails
-        document.getElementById('productSection').innerHTML = '<h2 class = "mx-auto text-center">' + error + '</h2>';
-    }
-}
-
-init();
 
 // Function to update items number in shopping cart.
 

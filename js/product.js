@@ -1,26 +1,30 @@
 // This function is used to make an Api request from the backend-server
+
 makeRequest = () => {
-    return new Promise((resolve, reject) => {
         const qureyString = window.location.search;
         const urlParam = new URLSearchParams(qureyString);
         // This id constant is used to build the unique url for the each product page
         const id = urlParam.get('id');
-        let apiRequest = new XMLHttpRequest();
-        apiRequest.open('GET', 'http://localhost:3000/api/teddies/' + id);
-        apiRequest.send();
-        apiRequest.onreadystatechange = () => {
-            if (apiRequest.readyState === 4) {
-                if (apiRequest.status === 200) {
-                    // If ready state and status return success codes, resolve promise with response
-                    resolve(JSON.parse(apiRequest.response));
-                } else {
-                    // Else, reject with the error message
-                    reject('We\'re sorry the server is unavailable');
-                }
-            }
-        }
-    });
+        return fetch('http://localhost:3000/api/teddies/' + id)
+        .then(function (httpBodyResponse) {
+            return httpBodyResponse.json()
+        })
+        .then(response => {
+            createPage(response)
+        })
+        .catch(function (error) {
+            alert (
+                "We\'re sorry the server is unavailable"
+            )
+        })
 }
+
+callForApi  = async () => {
+    const requestPromise = makeRequest();
+    const response = requestPromise;
+}
+
+callForApi();
 
 // Function to create the individual product page for each unique id
 
@@ -30,7 +34,7 @@ createPage = (response) => {
     const imgCard = document.createElement('div');
     const image = response.imageUrl;
     // Add bootstrap classes for product image
-    productImage.classList.add('container-fluid', 'p-0', 'col-xl-6','shadow');
+    productImage.classList.add('container-fluid', 'p-0', 'col-xl-6');
     // Add product image url
     productImage.innerHTML += '<img src="' + image + '" alt="Teddy Bear" class="img-fluid" style="height:100%; width:100%; object-fit:cover;">';
     // Append completed element to the page
@@ -108,6 +112,8 @@ createPage = (response) => {
     productCard.appendChild(addToCart);
     productCard.appendChild(addedToCartAlert);
 };
+
+
 // Function to update items number in shopping cart.
 
 function addNumCart() {
@@ -119,18 +125,3 @@ function addNumCart() {
     }
 }
 addNumCart();
-
-init = async () => {
-    try {
-        // Call makeRequest for api request and "await" response
-        const requestPromise = makeRequest();
-        const response = await requestPromise;
-        // Pass response to createPage fuction to display results
-        createPage(response);
-    } catch (error) {
-        // Error message displayed if request fails
-        document.querySelector('main').innerHTML = '<h2 class = "mx-auto text-center">' + error + '</h2>';
-    }
-}
-
-init();
