@@ -5,7 +5,9 @@ let orderId;
 let localStorageContent = localStorage.getItem('cart');
 let cartItemsArray = JSON.parse(localStorageContent);
 
-// Update cart number in navigation menu
+/**
+ * Update cart number in navigation menu
+ */
 function addNumCart() {
     if (localStorageContent) {
         let cartItemsTotal = document.querySelector('.cartItemsTotal');
@@ -14,14 +16,11 @@ function addNumCart() {
 }
 
 addNumCart();
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+
 (function () {
     'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    
     var forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
         .forEach(function (form) {
             form.addEventListener('submit', function (event) {
@@ -33,10 +32,7 @@ addNumCart();
                     event.preventDefault()
                     event.stopPropagation()
                     console.log('true');
-
                     let products = [];
-
-                    // Get product id and push it in array
                     let cartArray = JSON.parse(localStorage.getItem('cart'));
                     for (let i = 0; i < cartArray.length; i++) {
                         products.push(cartArray[i].id);
@@ -48,7 +44,6 @@ addNumCart();
                     let country = document.getElementById('country');
                     let city = document.getElementById('city');
                     let zip = document.getElementById('zip');
-                    // Object stores informations from form
                     let contact = {
                         firstName: firstName.value,
                         lastName: lastName.value,
@@ -63,16 +58,16 @@ addNumCart();
                         products: products,
                     }
                     makeRequest(data);
-
                     sessionStorage.setItem('firstName', contact.firstName);
                 }
-
                 form.classList.add('was-validated')
             }, false)
         })
 })()
 
-//CART
+/**
+ * Function to display shopping cart
+ */
 function displayCart() {
     let localStorageContent = localStorage.getItem('cart');
     let cartItemsArray = JSON.parse(localStorageContent);
@@ -116,14 +111,15 @@ function displayCart() {
 
 displayCart();
 
-//calculate total cost
+/**
+ * Function to calculate total cost of the items in the cart and return the total.
+ */
 function updateCartTotal() {
     let total = document.getElementById('totalCost');
     let totalCost = 0
     for (let i = 0; i < cartItemsArray.length; i++) {
         totalCost += cartItemsArray[i].price / 100;
     }
-    //return totalCost
     total.innerHTML = '$' + totalCost;
 
     sessionStorage.setItem('price', totalCost);
@@ -131,7 +127,11 @@ function updateCartTotal() {
 
 updateCartTotal();
 
-// Send inforamtion from user to api go to confirmation page
+/**
+ * Send inforamtion from user to api go to confirmation page
+ * 
+ * @param {*} data 
+ */
 function makeRequest(data) {
     fetch('http://localhost:3000/api/teddies/order', {
         method: 'POST',
