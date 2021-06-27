@@ -50,7 +50,7 @@ createCard = (response) => {
 /**
  * Function to update items number in shopping cart.
  */
-function addNumCart() {
+ addNumCart = () => {
     const localStorageContent = localStorage.getItem('cart');
     if (localStorageContent) {
         let cartItemsArray = JSON.parse(localStorageContent);
@@ -58,5 +58,4 @@ function addNumCart() {
         cartItemsTotal.innerHTML = cartItemsArray.length;
     }
 }
-
 addNumCart();

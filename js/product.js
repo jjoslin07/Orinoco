@@ -102,7 +102,7 @@ createPage = (response) => {
     /**
      * Add alert for items that are added to the cart
      */
-    addToCart.onclick = function () {
+    addToCart.onclick = () => {
         addedToCartAlert.classList.add('alert', 'alert-success', 'p-1', 'm-0', 'text-center', 'w-75', 'align-self-center');
         addedToCartAlert.setAttribute('role', 'alert');
         addedToCartAlert.textContent = response.name + ' ' + 'with' + ' ' + dropdownOptions.value + ' ' + 'Color' + ' ' + 'added to cart!';
@@ -116,7 +116,7 @@ createPage = (response) => {
 /**
  * Function to update items number in shopping cart.
  */
-function addNumCart() {
+addNumCart = () => {
     const localStorageContent = localStorage.getItem('cart');
     if (localStorageContent) {
         let cartItemsArray = JSON.parse(localStorageContent);

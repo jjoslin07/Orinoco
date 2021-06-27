@@ -1,7 +1,6 @@
 'use strict';
 
 let thankYouName = document.querySelector('.thankYouName');
-
 thankYouName.innerHTML = ' ' + sessionStorage.getItem('firstName') + '!';
 let totalCost = document.getElementById('totalCost');
 let orderId = document.getElementById('orderId');
