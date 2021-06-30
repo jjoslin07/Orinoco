@@ -1,31 +1,23 @@
 /**
  * This function is used to make an Api request from the backend-server
+ * and display an error message for the user if the server can't be reached
+ * or is unavailable.
  */
 
-makeRequest = () => {
         const qureyString = window.location.search;
         const urlParam = new URLSearchParams(qureyString);
         const id = urlParam.get('id');
-        return fetch('http://localhost:3000/api/teddies/' + id)
+         fetch('http://localhost:3000/api/teddies/' + id)
         .then(function (httpBodyResponse) {
             return httpBodyResponse.json()
         })
         .then(response => {
             createPage(response)
         })
-        .catch(function (error) {
-            alert (
-                "We\'re sorry the server is unavailable"
-            )
+        .catch(error => {
+            console.log(error)
+            document.getElementById('productImageRow').innerHTML = '<h2 class = "mx-auto mt-5 text-center"> We\'re sorry the server is unavailable</h2>';
         })
-}
-
-callForApi  = async () => {
-    const requestPromise = makeRequest();
-    const response = requestPromise;
-}
-
-callForApi();
 
 /**
  * Function to create the individual product page for each unique id
