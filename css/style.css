@@ -2,9 +2,60 @@
   color: black;
 }
 
+#confirmationPageJumbotron,
+#productCard,
+#homePageJumboTron {
+  background: linear-gradient(90deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
+}
 
-i {
-  color: black;
+#footer {
+  margin-top: auto;
+  background: linear-gradient(180deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
+
+}
+
+.bi-dash-square {
+  color: red;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Calibri', sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-primary,
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: #4466f2 !important;
+  border-color: #4466f2 !important;
+}
+
+.card {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+}
+
+.card-body {
+  background: linear-gradient(30deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
+}
+
+.details {
+  border: 1.5px solid grey;
+  box-shadow: 0px 0px 3px #212121;
+  color: #212121;
+  height: auto;
+  width: 100%;
+}
+
+.details:hover {
+  box-shadow: 0px 0px 10px rgba(255, 5, 201, 0.733);
 }
 
 .form-control::placeholder {
@@ -17,74 +68,22 @@ i {
   box-shadow: none;
 }
 
-body {
-  background-color: #eee;
-  font-family: 'Calibri', sans-serif !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.mt-100 {
-  margin-top: 100px;
-}
-
-.btn-primary,
-.btn-primary.disabled,
-.btn-primary:disabled {
-  background-color: #4466f2 !important;
-  border-color: #4466f2 !important;
-}
-
-.details {
-  border: 1.5px solid grey;
-  box-shadow: 0px 0px 3px #212121;
-  color: #212121;
-  height: auto;
-  width: 100%;
-}
-
-.productCard:hover {
-  box-shadow: 0px 0px 10px #212121;
-}
-
-.details:hover {
-  box-shadow: 0px 0px 10px rgba(255, 5, 201, 0.733);
-}
-
-.card-body {
-  background: linear-gradient(30deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
-}
-
-.btn {
-  border-radius: 0;
+i {
+  color: black;
 }
 
 .img-thumbnail {
   border: none;
 }
 
-.card {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-}
-
-#footer {
-  margin-top: auto;
-  background: linear-gradient(180deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
-
-}
-
-#confirmationPageJumbotron,
-#productCard,
-#homePageJumboTron {
-  background: linear-gradient(90deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
+.mt-100 {
+  margin-top: 100px;
 }
 
 .navbar {
   background: linear-gradient(270deg, white, rgba(255, 192, 203, 0.226), rgba(128, 0, 128, 0.233));
 }
 
-.bi-dash-square {
-  color: red;
+.productCard:hover {
+  box-shadow: 0px 0px 10px #212121;
 }

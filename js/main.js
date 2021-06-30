@@ -1,29 +1,21 @@
 /**
  * This function is used to make an Api request from the backend-server
- * @var makeRequest: Function name to make an API request.
+ * and display an error message for the user if server can't be reached 
+ * or is unavaiable.
+ * 
  */
 
-makeRequest = () => {
-    return fetch("http://localhost:3000/api/teddies")
+ fetch("http://localhost:3000/api/teddies")
         .then(function (httpBodyResponse) {
             return httpBodyResponse.json()
         })
         .then(response => {
             createCard(response)
         })
-        .catch(function (error) {
-            alert(
-                "We\'re sorry the server is unavailable"
-            )
+        .catch(error => {
+            console.log(error);
+            document.getElementById('productSection').innerHTML = '<h2 class = "mx-auto text-center"> We\'re sorry the server is unavailable</h2>';
         })
-}
-
-callForApi = async () => {
-    const requestPromise = makeRequest();
-    const response = requestPromise;
-}
-
-callForApi();
 
 /**
  *  This function will be used to create the product cards dynamically on the home page
