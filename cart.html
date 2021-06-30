@@ -128,57 +128,7 @@
                 Zip code required; 5 digits.
               </div>
             </div>
-            <div class="col-md-6 col-lg-5 mt-3">
-              <div>
-                <label for="ccn" class="form-label">Credit Card Number</label>
-              </div>
-              <div>
-                <input type="text" class="form-control" id="ccn" placeholder="xxxx-xxxx-xxxx-xxxx" inputmode="numeric"
-                  pattern="[0-9]{13,16}" minlength="13" maxlength="19" autocomplete="cc-number" required>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-5 mt-3">
-              <div>
-                <label for="cc-exp" class="form-label mx-auto">Expiration Date</label>
-              </div>
-              <div class="d-inline-flex col">
-                <select name="expireMM" class="form-control" id="expireMM">
-                  <option value=''>Month</option>
-                  <option value='01'>Jan</option>
-                  <option value='02'>Feb</option>
-                  <option value='03'>Mar</option>
-                  <option value='04'>Apr</option>
-                  <option value='05'>May</option>
-                  <option value='06'>Jun</option>
-                  <option value='07'>Jul</option>
-                  <option value='08'>Aug</option>
-                  <option value='09'>Sep</option>
-                  <option value='10'>Oct</option>
-                  <option value='11'>Nov</option>
-                  <option value='12'>Dec</option>
-                </select>
-                <select name="expireYY" class="form-control mx-1" id="expireYY">
-                  <option value=''>Year</option>
-                  <option value='21'>2021</option>
-                  <option value='22'>2022</option>
-                  <option value='23'>2023</option>
-                  <option value='24'>2024</option>
-                  <option value='25'>2025</option>
-                </select>
-                <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4" />
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-2 mt-3">
-              <div>
-                <label for="cc-csc" class="form-label">Security Code</label>
-              </div>
-              <div>
-                <input type="text" class="form-control" id="ccv" placeholder="xxx" inputmode="numeric"
-                  pattern="^[0-9]{1,3}$" minlength="1" maxlength="3" autocomplete="cc-csc" required>
-              </div>
-            </div>
-          </div>
-          <button class="my-5 col-sm-4 w-100 btn btn-primary btn-lg
+            <button class="my-5 col-sm-4 w-100 btn btn-primary btn-lg
                   btn-submit rounded" type="submit" value="Submit" aria-label="Submit
                   your order">Submit</button>
         </form>

@@ -1,5 +1,6 @@
 /**
  * This function is used to make an Api request from the backend-server
+ * @var makeRequest: Function name to make an API request.
  */
 
 makeRequest = () => {
@@ -26,6 +27,9 @@ callForApi();
 
 /**
  *  This function will be used to create the product cards dynamically on the home page
+ *  @var createCard: The variable for product card creation. 
+ *  @param response: Response from the API.
+ *  
  */
 
 createCard = (response) => {
@@ -49,6 +53,8 @@ createCard = (response) => {
 
 /**
  * Function to update items number in shopping cart.
+ * @var addNumCart: Variable name for the function that checks if anything has been added to cart and display number.
+ * @constant {string} localStorageContent for storing local content
  */
  addNumCart = () => {
     const localStorageContent = localStorage.getItem('cart');
