@@ -50,4 +50,29 @@ The assessor will challenge your decisions, so be prepared to defend your work. 
 - Create a test plan for an application
 - Interact with a web service using JavaScript
 - Manage website events with JavaScript
- 
+### Light House Reports
+#### Home Page
+![homePageLightHouseReport](https://user-images.githubusercontent.com/73438491/124060114-31b8dd80-d9e1-11eb-926a-f8cd7dc7a57e.JPG)
+#### Product Page
+![productPageLightHouseReport](https://user-images.githubusercontent.com/73438491/124060246-7e9cb400-d9e1-11eb-8a65-af0bc07ec797.JPG)
+#### Cart Page 
+![cartPageLightHouseReport](https://user-images.githubusercontent.com/73438491/124060274-92481a80-d9e1-11eb-85a3-0d2162423ced.JPG)
+#### Confirmation Page
+![confirmationPageLightHouseReport](https://user-images.githubusercontent.com/73438491/124060294-9a07bf00-d9e1-11eb-9ecb-80b54cf4c6fa.JPG)
+### Screenshots
+#### Home Page Top
+![homePageTop](https://user-images.githubusercontent.com/73438491/124060953-e43d7000-d9e2-11eb-98c9-1039bdc45195.JPG)
+#### Home Page Bottom
+![homePageBottom](https://user-images.githubusercontent.com/73438491/124060972-ebfd1480-d9e2-11eb-93c5-d3be6707341a.JPG)
+#### Product Page
+![productPage](https://user-images.githubusercontent.com/73438491/124060984-f3bcb900-d9e2-11eb-8561-68af5d44409e.JPG)
+#### Cart Page
+![cartPage](https://user-images.githubusercontent.com/73438491/124060996-fae3c700-d9e2-11eb-9173-302f6c4a829e.JPG)
+#### Confirmation Page
+![confirmationPage](https://user-images.githubusercontent.com/73438491/124061015-02a36b80-d9e3-11eb-8829-07bab31c83bf.JPG)
+
+
+
+
+
+
