@@ -50,5 +50,4 @@ The assessor will challenge your decisions, so be prepared to defend your work. 
 - Create a test plan for an application
 - Interact with a web service using JavaScript
 - Manage website events with JavaScript
-### Screenshots
  
