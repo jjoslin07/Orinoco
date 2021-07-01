@@ -1,5 +1,3 @@
-'use strict';
-
 let thankYouName = document.querySelector('.thankYouName');
 thankYouName.innerHTML = ' ' + sessionStorage.getItem('firstName') + '!';
 let totalCost = document.getElementById('totalCost');
@@ -13,4 +11,4 @@ function eraseSessionStorage() {
     sessionStorage.removeItem('price');
     localStorage.removeItem('cart');
     location.replace('index.html');
-};
+}

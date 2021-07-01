@@ -7,15 +7,15 @@
 
  fetch("http://localhost:3000/api/teddies")
         .then(function (httpBodyResponse) {
-            return httpBodyResponse.json()
+            return httpBodyResponse.json();
         })
-        .then(response => {
-            createCard(response)
+        .then(function (response) {
+            createCard(response);
         })
-        .catch(error => {
+        .catch(function (error) {
             console.log(error);
             document.getElementById('productSection').innerHTML = '<h2 class = "mx-auto text-center"> We\'re sorry the server is unavailable</h2>';
-        })
+        });
 
 /**
  *  This function will be used to create the product cards dynamically on the home page
@@ -24,7 +24,7 @@
  *  
  */
 
-createCard = (response) => {
+    function createCard(response)  {
     const section = document.querySelector('#productSection');
     for (let i in response) {
         const card = document.createElement('article');
@@ -48,7 +48,7 @@ createCard = (response) => {
  * @var addNumCart: Variable name for the function that checks if anything has been added to cart and display number.
  * @constant {string} localStorageContent for storing local content
  */
- addNumCart = () => {
+ function addNumCart() {
     const localStorageContent = localStorage.getItem('cart');
     if (localStorageContent) {
         let cartItemsArray = JSON.parse(localStorageContent);

@@ -1,0 +1,88 @@
+#button-addon1 {
+    color: #000
+}
+
+#confirmationPageJumbotron,
+#homePageJumboTron,
+#productCard {
+    background: linear-gradient(90deg, #fff, rgba(255, 192, 203, .226), rgba(128, 0, 128, .233))
+}
+
+#footer {
+    margin-top: auto;
+    background: linear-gradient(180deg, #fff, rgba(255, 192, 203, .226), rgba(128, 0, 128, .233))
+}
+
+.bi-dash-square {
+    color: red
+}
+
+body {
+    background-color: #eee;
+    font-family: Calibri, sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh
+}
+
+.btn {
+    border-radius: 0
+}
+
+.btn-primary,
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background-color: #4466f2 !important;
+    border-color: #4466f2 !important
+}
+
+.card {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2)
+}
+
+.card-body {
+    background: linear-gradient(30deg, #fff, rgba(255, 192, 203, .226), rgba(128, 0, 128, .233))
+}
+
+.details {
+    border: 1.5px solid grey;
+    box-shadow: 0 0 3px #212121;
+    color: #212121;
+    height: auto;
+    width: 100%
+}
+
+.details:hover {
+    box-shadow: 0 0 10px rgba(255, 5, 201, .733)
+}
+
+.form-control::placeholder {
+    font-size: .95rem;
+    color: #aaa;
+    font-style: italic
+}
+
+.form-control.shadow-0:focus {
+    box-shadow: none
+}
+
+i {
+    color: #000
+}
+
+.img-thumbnail {
+    border: none
+}
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.navbar {
+    background: linear-gradient(270deg, #fff, rgba(255, 192, 203, .226), rgba(128, 0, 128, .233))
+}
+
+.productCard:hover {
+    box-shadow: 0 0 10px #212121
+}

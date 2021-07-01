@@ -1,5 +1,3 @@
-'use strict';
-
 let orderId;
 
 let localStorageContent = localStorage.getItem('cart');
@@ -18,19 +16,18 @@ function addNumCart() {
 addNumCart();
 
 (function () {
-    'use strict'
-    
-    var forms = document.querySelectorAll('.needs-validation')
+
+    var forms = document.querySelectorAll('.needs-validation');
     Array.prototype.slice.call(forms)
         .forEach(function (form) {
             form.addEventListener('submit', function (event) {
                 if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
+                    event.preventDefault();
+                    event.stopPropagation();
                     console.log('not valid');
                 } else {
-                    event.preventDefault()
-                    event.stopPropagation()
+                    event.preventDefault();
+                    event.stopPropagation();
                     console.log('true');
                     let products = [];
                     let cartArray = JSON.parse(localStorage.getItem('cart'));
@@ -52,18 +49,18 @@ addNumCart();
                         country: country.value,
                         city: city.value,
                         zip: zip.value,
-                    }
+                    };
                     let data = {
                         contact: contact,
                         products: products,
-                    }
+                    };
                     makeRequest(data);
                     sessionStorage.setItem('firstName', contact.firstName);
                 }
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
+                form.classList.add('was-validated');
+            }, false);
+        });
+})();
 
 /**
  * Function to display shopping cart
@@ -99,7 +96,7 @@ function displayCart() {
                 cartItemsArray.splice(i, 1);
                 localStorage.setItem('cart', JSON.stringify(cartItemsArray));
                 location.reload();
-            }
+            };
 
             cart.appendChild(cartItem);
             cartItem.appendChild(item);
@@ -116,7 +113,7 @@ displayCart();
  */
 function updateCartTotal() {
     let total = document.getElementById('totalCost');
-    let totalCost = 0
+    let totalCost = 0;
     for (let i = 0; i < cartItemsArray.length; i++) {
         totalCost += cartItemsArray[i].price / 100;
     }
@@ -139,15 +136,15 @@ function makeRequest(data) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-    }).then((response) => {
+    }).then(function(response) {
         return response.json();
-    }).then((data) => {
+    }).then(function(data) {
         orderId = data.orderId;
         sessionStorage.setItem("orderId", orderId);
         console.log(orderId);
         location.replace('confirmation.html');
 
-    }).catch((err) => {
+    }).catch(function (err){
         console.log(err);
-    })
-};
+    });
+}

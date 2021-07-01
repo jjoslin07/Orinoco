@@ -3,27 +3,26 @@
  * and display an error message for the user if the server can't be reached
  * or is unavailable.
  */
-
         const qureyString = window.location.search;
         const urlParam = new URLSearchParams(qureyString);
         const id = urlParam.get('id');
          fetch('http://localhost:3000/api/teddies/' + id)
         .then(function (httpBodyResponse) {
-            return httpBodyResponse.json()
+            return httpBodyResponse.json();
         })
-        .then(response => {
-            createPage(response)
+        .then(function (response) {
+            createPage(response);
         })
-        .catch(error => {
-            console.log(error)
+        .catch(function(error) {
+            console.log(error);
             document.getElementById('productImageRow').innerHTML = '<h2 class = "mx-auto mt-5 text-center"> We\'re sorry the server is unavailable</h2>';
-        })
+        });
 
 /**
  * Function to create the individual product page for each unique id
  */
 
-createPage = (response) => {
+    function createPage(response) {
     const productImage = document.getElementById('productImage');
     const imgCard = document.createElement('div');
     const image = response.imageUrl;
@@ -69,7 +68,7 @@ createPage = (response) => {
     /**
      * Function that adds item to local storage
      */
-    addToCart.addEventListener('click', () => {
+     addToCart.addEventListener('click', () => {
         let cartItems = [];
         const localStorageContent = localStorage.getItem('cart');
         if (localStorageContent === null) {
@@ -98,17 +97,17 @@ createPage = (response) => {
         addedToCartAlert.classList.add('alert', 'alert-success', 'p-1', 'm-0', 'text-center', 'w-75', 'align-self-center');
         addedToCartAlert.setAttribute('role', 'alert');
         addedToCartAlert.textContent = response.name + ' ' + 'with' + ' ' + dropdownOptions.value + ' ' + 'Color' + ' ' + 'added to cart!';
-    }
+    };
     productCard.appendChild(productDescription);
     productCard.appendChild(dropdownMenu);
     productCard.appendChild(addToCart);
     productCard.appendChild(addedToCartAlert);
-};
+}
 
 /**
  * Function to update items number in shopping cart.
  */
-addNumCart = () => {
+    function addNumCart() {
     const localStorageContent = localStorage.getItem('cart');
     if (localStorageContent) {
         let cartItemsArray = JSON.parse(localStorageContent);
