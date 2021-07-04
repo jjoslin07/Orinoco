@@ -101,7 +101,7 @@ function createPage(response) {
             id: response._id,
             price: response.price,
             selectColors: dropdownOptionsColors.value,
-            quantity: dropDownOptionsQuantity.value
+            quantity: parseInt(dropDownOptionsQuantity.value)
         };
         cartItems.push(product);
         localStorage.setItem('cart', JSON.stringify(cartItems));

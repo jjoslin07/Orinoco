@@ -88,7 +88,7 @@ function displayCart() {
 
             let removeButton = document.createElement('button');
             removeButton.setAttribute('type', 'button');
-            removeButton.classList.add('btn','my-2', 'py-1', 'px-2', 'remove');
+            removeButton.classList.add('btn', 'my-2', 'py-1', 'px-2', 'remove');
             removeButton.setAttribute('aria-label', 'remove');
             removeButton.innerHTML = '<i class="bi bi-dash-square"></i>';
             removeButton.onclick = function removeItem() {
@@ -136,15 +136,15 @@ function makeRequest(data) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-    }).then(function(response) {
+    }).then(function (response) {
         return response.json();
-    }).then(function(data) {
+    }).then(function (data) {
         orderId = data.orderId;
         sessionStorage.setItem("orderId", orderId);
         console.log(orderId);
         location.replace('confirmation.html');
 
-    }).catch(function (err){
+    }).catch(function (err) {
         console.log(err);
     });
 }
