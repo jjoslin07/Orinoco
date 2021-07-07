@@ -1,6 +1,8 @@
 # <p align="center">Project-5 Open Classrooms</p>
 ### Website ➡️ [Orinoco Handmade Teddy Bears](https://jjoslin07.github.io/Project-5/index.html)
 ### Backend ➡️ [Must clone and run to test website](https://github.com/OpenClassrooms-Student-Center/JWDP5)
+#### Screenshots ➡️ [Click Here](#screenshots) 
+#### Google Lighthouse Reports ➡️ [Click Here](#lighthouse)
 ## Project Overview
 <div>
   <p>Sheila, a friend of yours from school, called you last week, telling you she has been approaching investors for her new online sales business, Orinoco.</p>
@@ -47,33 +49,32 @@ You'll do an oral presentation of your project with an assessor in order to imit
 - Playing the role of client, the assessor will ask you questions about your methodology and your deliverables. 
 The assessor will challenge your decisions, so be prepared to defend your work. At the end of the session, the assessor will stop playing the role of client so that you can debrief together.
 ### Skills
-- Ensure data quality using data validation and cleaning
-- Create a test plan for an application
-- Interact with a web service using JavaScript
-- Manage website events with JavaScript
-### Light House Reports
-#### Home Page
-![homePageLightHouseReport](https://user-images.githubusercontent.com/73438491/124060114-31b8dd80-d9e1-11eb-926a-f8cd7dc7a57e.JPG)
-#### Product Page
-![productPageLightHouseReport](https://user-images.githubusercontent.com/73438491/124060246-7e9cb400-d9e1-11eb-8a65-af0bc07ec797.JPG)
-#### Cart Page 
-![cartPageLightHouseReport](https://user-images.githubusercontent.com/73438491/124060274-92481a80-d9e1-11eb-85a3-0d2162423ced.JPG)
-#### Confirmation Page
-![confirmationPageLightHouseReport](https://user-images.githubusercontent.com/73438491/124060294-9a07bf00-d9e1-11eb-9ecb-80b54cf4c6fa.JPG)
-### Screenshots
-#### Home Page Top
-![homePageTop](https://user-images.githubusercontent.com/73438491/124060953-e43d7000-d9e2-11eb-98c9-1039bdc45195.JPG)
-#### Home Page Bottom
-![homePageBottom](https://user-images.githubusercontent.com/73438491/124060972-ebfd1480-d9e2-11eb-93c5-d3be6707341a.JPG)
-#### Product Page
-![productPage](https://user-images.githubusercontent.com/73438491/124060984-f3bcb900-d9e2-11eb-8561-68af5d44409e.JPG)
-#### Cart Page
-![cartPage](https://user-images.githubusercontent.com/73438491/124060996-fae3c700-d9e2-11eb-9173-302f6c4a829e.JPG)
-#### Confirmation Page
-![confirmationPage](https://user-images.githubusercontent.com/73438491/124061015-02a36b80-d9e3-11eb-8829-07bab31c83bf.JPG)
+⚒  Ensure data quality using data validation and cleaning
 
+⚒  Create a test plan for an application
 
+⚒  Interact with a web service using JavaScript
 
+⚒  Manage website events with JavaScript
 
+<div align="center">
+    <h3 id="screenshots"> Screenshots</h3>
+  <h4> Home Page </h4>
+<img src="https://user-images.githubusercontent.com/73438491/124791938-63f69d80-df01-11eb-8f7a-0ce7f6ae3a4e.png" alt="Orinoco home page screenshot" />
+  <h4> Product Page </h4>
+<img src="https://user-images.githubusercontent.com/73438491/124792723-1f1f3680-df02-11eb-87c2-19eb57919934.png" alt="Orinoco product page screenshot" />
+  <h4>Cart Page</h4>
+<img src="https://user-images.githubusercontent.com/73438491/124792877-470e9a00-df02-11eb-9c8b-bc6c85aa1429.png" alt="Orinoco cart page screenshot" />
+  <h4>Confirmation Page</h4>
+<img src="https://user-images.githubusercontent.com/73438491/124792918-555cb600-df02-11eb-9715-9cdc6e7abcdf.png" alt="Orinoco confirmation page screenshot" />
+  <h3 id="lighthouse">Light House Reports</h3>
+  <h4>Home Page</h4>
+<img src="https://user-images.githubusercontent.com/73438491/124060114-31b8dd80-d9e1-11eb-926a-f8cd7dc7a57e.JPG" alt="Home Page Lighthouse Report" />
+  <h4> Product Page</h4>
+<img src="https://user-images.githubusercontent.com/73438491/124060246-7e9cb400-d9e1-11eb-8a65-af0bc07ec797.JPG" alt="Produt Page Lighthouse Report" />
+  <h4> Cart Page </h4>
+  <img src="https://user-images.githubusercontent.com/73438491/124060274-92481a80-d9e1-11eb-85a3-0d2162423ced.JPG" alt="Cart Page Lighthouse Report" />
+  <h4> Confirmation Page</h4>
+  <img src="https://user-images.githubusercontent.com/73438491/124060294-9a07bf00-d9e1-11eb-9ecb-80b54cf4c6fa.JPG" alt="Confirmation Page Lighthouse Report" />
 
-
+</div>
