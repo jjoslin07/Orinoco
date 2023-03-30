@@ -120,17 +120,19 @@ function createPage(response) {
 		} else {
 			cartItems = JSON.parse(localStorageContent);
 		}
-		let product = {
-			imageUrl: response.imageUrl,
-			name: response.name,
-			id: response._id,
-			price: response.price,
-			selectColors: dropdownOptionsColors.value,
-			quantity: parseInt(dropDownOptionsQuantity.value),
-		};
-		cartItems.push(product);
+		const selectedQuantity = parseInt(dropDownOptionsQuantity.value);
+		for (let i = 0; i < selectedQuantity; i++) {
+			let product = {
+				imageUrl: response.imageUrl,
+				name: response.name,
+				id: response._id,
+				price: response.price,
+				selectColors: dropdownOptionsColors.value,
+				quantity: 1,
+			};
+			cartItems.push(product);
+		}
 		localStorage.setItem('cart', JSON.stringify(cartItems));
-
 		addNumCart();
 	});
 
