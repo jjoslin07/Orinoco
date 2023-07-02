@@ -5,7 +5,7 @@
  * 
  */
 
- fetch("http://localhost:3000/api/teddies")
+ fetch("https://orinoco-ncsr.onrender.com/api/teddies")
         .then(function (httpBodyResponse) {
             return httpBodyResponse.json();
         })

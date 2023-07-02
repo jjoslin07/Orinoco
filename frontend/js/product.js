@@ -6,7 +6,7 @@
 const qureyString = window.location.search;
 const urlParam = new URLSearchParams(qureyString);
 const id = urlParam.get('id');
-fetch('http://localhost:3000/api/teddies/' + id)
+fetch('https://orinoco-ncsr.onrender.com/api/teddies/' + id)
 	.then(function (httpBodyResponse) {
 		return httpBodyResponse.json();
 	})
