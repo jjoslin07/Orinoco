@@ -1,6 +1,5 @@
 # <p align="center">Project-5 Open Classrooms</p>
-### Website ➡️ [Orinoco Handmade Teddy Bears](https://jjoslin07.github.io/Orinoco/frontend/index.html)
-### Backend ➡️ [Must clone and run to test website](https://github.com/OpenClassrooms-Student-Center/JWDP5)
+### Website ➡️ [Orinoco Handmade Teddy Bears](https://orinoco-home.onrender.com)
 #### Screenshots ➡️ [Click Here](#screenshots) 
 #### Google Lighthouse Reports ➡️ [Click Here](#lighthouse)
 ## Project Overview
